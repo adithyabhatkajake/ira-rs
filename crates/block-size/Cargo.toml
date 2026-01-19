@@ -1,0 +1,29 @@
+[package]
+name = "block-size"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+
+[[bin]]
+name = "block-size"
+path = "src/main.rs"
+
+[dependencies]
+# Reth dependencies
+reth-ethereum = { git = "https://github.com/paradigmxyz/reth", rev = "62abfdaeb54e8a205a8ee085ddebd56047d93374", features = ["node"] }
+reth-db = { git = "https://github.com/paradigmxyz/reth", rev = "62abfdaeb54e8a205a8ee085ddebd56047d93374" }
+reth-node-builder = { git = "https://github.com/paradigmxyz/reth", rev = "62abfdaeb54e8a205a8ee085ddebd56047d93374" }
+
+# Alloy dependencies
+alloy-primitives = "1"
+alloy-rlp = "0.3"
+alloy-consensus = "0.15"
+
+# CLI and utilities
+clap = { version = "4", features = ["derive"] }
+eyre = "0.6"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+indicatif = "0.17"
+chrono = "0.4"
+rayon = "1.10"

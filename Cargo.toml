@@ -1,0 +1,43 @@
+[workspace]
+members = [
+    ".",
+    "crates/ira-common",
+    "crates/reth-baseline",
+    "crates/reth-primary",
+    "crates/reth-backup", "crates/block-size", "crates/io-trace",
+]
+resolver = "2"
+
+[package]
+name = "ira-trace-collector"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+
+[dependencies]
+# Reth dependencies - using commit that matches local reth node
+reth-ethereum = { git = "https://github.com/paradigmxyz/reth", rev = "62abfdaeb54e8a205a8ee085ddebd56047d93374", features = ["node", "evm"] }
+reth-revm = { git = "https://github.com/paradigmxyz/reth", rev = "62abfdaeb54e8a205a8ee085ddebd56047d93374" }
+reth-chainspec = { git = "https://github.com/paradigmxyz/reth", rev = "62abfdaeb54e8a205a8ee085ddebd56047d93374" }
+reth-provider = { git = "https://github.com/paradigmxyz/reth", rev = "62abfdaeb54e8a205a8ee085ddebd56047d93374" }
+
+# Alloy dependencies (versions managed by reth)
+alloy-primitives = "1"
+alloy-consensus = "1"
+alloy-evm = "0.25"
+
+# Parquet/Arrow for output
+arrow = "54"
+parquet = { version = "54", features = ["arrow", "zstd"] }
+
+# CLI and utilities
+clap = { version = "4", features = ["derive"] }
+eyre = "0.6"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+indicatif = "0.17"
+rayon = "1.10"
+
+[profile.release]
+lto = true
+codegen-units = 1

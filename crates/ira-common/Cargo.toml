@@ -1,0 +1,28 @@
+[package]
+name = "ira-common"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+
+[dependencies]
+# Reth dependencies - using commit that matches local reth node
+reth-ethereum = { git = "https://github.com/paradigmxyz/reth", rev = "62abfdaeb54e8a205a8ee085ddebd56047d93374", features = ["node", "evm"] }
+reth-revm = { git = "https://github.com/paradigmxyz/reth", rev = "62abfdaeb54e8a205a8ee085ddebd56047d93374" }
+
+# Alloy dependencies
+alloy-primitives = "1"
+alloy-consensus = "1"
+alloy-evm = "0.25"
+
+# Compression
+zstd = "0.13"
+
+# Database for hint storage
+redb = "2"
+
+# CLI and utilities
+clap = { version = "4", features = ["derive"] }
+eyre = "0.6"
+tracing = "0.1"
+chrono = "0.4"
+sha3 = "0.10.8"
