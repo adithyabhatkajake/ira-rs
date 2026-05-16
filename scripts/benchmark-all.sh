@@ -13,10 +13,11 @@
 
 set -euo pipefail
 
-DATADIR="/Volumes/X/reth-eth-datadir"
-HINT_DIR="/Volumes/X/ira-analysis/hints"
-OUTPUT_DIR="/Volumes/X/ira-data"
-BIN_DIR="/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/target/release"
+# Defaults; override via env vars or CLI flags below.
+DATADIR="${RETH_DATADIR:-./reth-datadir}"
+HINT_DIR="${IRA_HINTS:-./ira-data/hints}"
+OUTPUT_DIR="${IRA_OUTPUT:-data}"
+BIN_DIR="${IRA_BIN_DIR:-target/release}"
 TODAY=$(date +%Y.%m.%d)
 
 # Parallel thread counts to benchmark
@@ -30,12 +31,25 @@ RESUME_CONFIG=""
 RESUME_RUN=0
 SKIP=false
 
-if [ "${1:-}" = "--resume" ] && [ -n "${2:-}" ]; then
-    RESUME_CONFIG="${2%%:*}"
-    RESUME_RUN="${2##*:}"
-    SKIP=true
-    echo "Resuming from ${RESUME_CONFIG} run ${RESUME_RUN}"
-fi
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --datadir)     DATADIR="$2";     shift 2 ;;
+        --hint-dir)    HINT_DIR="$2";    shift 2 ;;
+        --output-dir)  OUTPUT_DIR="$2";  shift 2 ;;
+        --bin-dir)     BIN_DIR="$2";     shift 2 ;;
+        --resume)
+            RESUME_CONFIG="${2%%:*}"
+            RESUME_RUN="${2##*:}"
+            SKIP=true
+            echo "Resuming from ${RESUME_CONFIG} run ${RESUME_RUN}"
+            shift 2 ;;
+        *)
+            echo "Unknown option: $1" >&2
+            echo "Usage: $0 [--datadir DIR] [--hint-dir DIR] [--output-dir DIR] [--bin-dir DIR] [--resume CONFIG:RUN]" >&2
+            exit 1 ;;
+    esac
+done
 
 # Check if we should skip this task or start running
 should_run() {

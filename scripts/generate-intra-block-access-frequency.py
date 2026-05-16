@@ -5,11 +5,12 @@ This script calculates how many times each unique key is accessed within a singl
 then outputs the frequency distribution (how many keys are accessed 1 time, 2 times, etc.)
 """
 
+import os
 import duckdb
 from datetime import date
 
-DATA_PATH = "/Volumes/X/ira-new-analysis/*.parquet"
-OUTPUT_DIR = "/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/data"
+DATA_PATH = os.environ.get("IRA_TRACES", "/Volumes/X/ira-new-analysis/*.parquet")
+OUTPUT_DIR = os.environ.get("IRA_OUTPUT", "data")
 
 
 def main():

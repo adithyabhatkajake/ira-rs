@@ -5,13 +5,15 @@ Graph hint sizes (raw and compressed) from the CSV data.
 Creates a single plot showing the distribution of raw vs compressed hint sizes.
 """
 
+import os
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
 
-DATA_DIR = Path("/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/data")
-OUTPUT_DIR = Path("/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/figures")
+DATA_DIR = Path(os.environ.get("IRA_OUTPUT", "data"))
+OUTPUT_DIR = Path(os.environ.get("IRA_FIGURES", "figures"))
 
 
 def main():

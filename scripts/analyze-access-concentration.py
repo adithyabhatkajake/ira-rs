@@ -7,9 +7,11 @@ Outputs all numbers needed for the "Extreme Access Concentration" section:
 - Key-level concentration statistics
 """
 
+import os
+
 import duckdb
 
-DATA_PATH = "/Volumes/X/ira-new-analysis/*.parquet"
+DATA_PATH = os.environ.get("IRA_TRACES", "/Volumes/X/ira-new-analysis/*.parquet")
 
 # Known contract names for annotation
 CONTRACT_NAMES = {

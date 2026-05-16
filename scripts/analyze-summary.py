@@ -7,9 +7,11 @@ Outputs data for:
 2. Ephemeral keys - keys appearing in only one block, their intra-block reuse
 """
 
+import os
+
 import duckdb
 
-DATA_PATH = "/Volumes/X/ira-new-analysis/*.parquet"
+DATA_PATH = os.environ.get("IRA_TRACES", "/Volumes/X/ira-new-analysis/*.parquet")
 
 
 def main():

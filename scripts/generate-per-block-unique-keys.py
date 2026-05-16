@@ -4,11 +4,12 @@
 For each block, count the number of unique (target_address, storage_slot) pairs.
 """
 
+import os
 import duckdb
 from datetime import date
 
-DATA_PATH = "/Volumes/X/ira-new-analysis/*.parquet"
-OUTPUT_DIR = "/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/data"
+DATA_PATH = os.environ.get("IRA_TRACES", "/Volumes/X/ira-new-analysis/*.parquet")
+OUTPUT_DIR = os.environ.get("IRA_OUTPUT", "data")
 
 
 def main():

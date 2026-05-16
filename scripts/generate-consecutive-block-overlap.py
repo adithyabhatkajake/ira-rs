@@ -8,11 +8,12 @@ For each consecutive block pair (n, n+1), compute:
 - overlap_pct: overlap / keys_in_block_n_plus_1 * 100
 """
 
+import os
 import duckdb
 from datetime import date
 
-DATA_PATH = "/Volumes/X/ira-new-analysis/*.parquet"
-OUTPUT_DIR = "/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/data"
+DATA_PATH = os.environ.get("IRA_TRACES", "/Volumes/X/ira-new-analysis/*.parquet")
+OUTPUT_DIR = os.environ.get("IRA_OUTPUT", "data")
 
 
 def main():

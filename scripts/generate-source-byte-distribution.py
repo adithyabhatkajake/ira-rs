@@ -24,8 +24,8 @@ import zstandard
 from datetime import date
 from pathlib import Path
 
-HINTS_DIR = "/Volumes/X/ira-analysis/hints"
-OUTPUT_DIR = "/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/data"
+HINTS_DIR = os.environ.get("IRA_HINTS", "/Volumes/X/ira-analysis/hints")
+OUTPUT_DIR = os.environ.get("IRA_OUTPUT", "data")
 
 SOURCE_NAMES = {
     0: "IN_PLAIN_STATE",

@@ -16,6 +16,8 @@ Keys are:
 Outputs CSV with one row per block.
 """
 
+import os
+
 import duckdb
 import zstandard as zstd
 import time
@@ -23,8 +25,8 @@ from datetime import date
 import csv
 from collections import defaultdict
 
-DATA_PATH = "/Volumes/X/ira-new-analysis/*.parquet"
-OUTPUT_DIR = "/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/data"
+DATA_PATH = os.environ.get("IRA_TRACES", "/Volumes/X/ira-new-analysis/*.parquet")
+OUTPUT_DIR = os.environ.get("IRA_OUTPUT", "data")
 
 
 def main():

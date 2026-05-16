@@ -4,12 +4,12 @@
 
 set -e
 
-# Configuration - modify these as needed
-DATADIR="/Volumes/X/reth-eth-datadir"
-HINT_DIR="/Volumes/X/ira-analysis/hints"
-STATE_HASH_DIR="/Volumes/X/ira-analysis/state-hashes"
-OUTPUT_DIR="data"
-BIN_DIR="target/release"
+# Defaults; override via env vars or CLI flags below.
+DATADIR="${RETH_DATADIR:-./reth-datadir}"
+HINT_DIR="${IRA_HINTS:-./ira-data/hints}"
+STATE_HASH_DIR="${IRA_STATE_HASHES:-./ira-data/state-hashes}"
+OUTPUT_DIR="${IRA_OUTPUT:-data}"
+BIN_DIR="${IRA_BIN_DIR:-target/release}"
 
 START_BLOCK=24019447
 END_BLOCK=24120246  # ~100,800 blocks (~2 weeks)

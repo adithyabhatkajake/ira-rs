@@ -2,3 +2,7 @@
 .tmp/
 .venv/
 ira-p/
+__pycache__/
+*.pyc
+/artifact/generated/
+/artifact/figures/

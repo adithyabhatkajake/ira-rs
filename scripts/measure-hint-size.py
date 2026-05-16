@@ -22,8 +22,8 @@ import time
 from pathlib import Path
 from datetime import date
 
-HINT_DIR = "/Volumes/X/ira-analysis/hints"
-OUTPUT_DIR = "/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/data"
+HINT_DIR = os.environ.get("IRA_HINTS", "/Volumes/X/ira-analysis/hints")
+OUTPUT_DIR = os.environ.get("IRA_OUTPUT", "data")
 HEADER_SIZE = 28
 MAGIC = b"IRABHINT"
 

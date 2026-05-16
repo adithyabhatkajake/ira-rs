@@ -10,11 +10,13 @@ Includes:
 - Account state: key (20-byte address) + value (32 bytes for balance/hash)
 """
 
+import os
+
 import duckdb
 from datetime import date
 
-DATA_PATH = "/Volumes/X/ira-new-analysis/*.parquet"
-OUTPUT_DIR = "/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/data"
+DATA_PATH = os.environ.get("IRA_TRACES", "/Volumes/X/ira-new-analysis/*.parquet")
+OUTPUT_DIR = os.environ.get("IRA_OUTPUT", "data")
 
 
 def main():

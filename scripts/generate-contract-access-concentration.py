@@ -5,11 +5,12 @@ For each unique contract address, count total storage operations (SLOAD + SSTORE
 sorted by total_ops descending with cumulative share.
 """
 
+import os
 import duckdb
 from datetime import date
 
-DATA_PATH = "/Volumes/X/ira-new-analysis/*.parquet"
-OUTPUT_DIR = "/Users/adithyabhat/Github/ira-analytical/ira-trace-collector/data"
+DATA_PATH = os.environ.get("IRA_TRACES", "/Volumes/X/ira-new-analysis/*.parquet")
+OUTPUT_DIR = os.environ.get("IRA_OUTPUT", "data")
 
 
 def main():

@@ -9,9 +9,11 @@ Outputs all numbers needed for the "High Intra-Block Locality" section:
 - Cache hit potential percentage
 """
 
+import os
+
 import duckdb
 
-DATA_PATH = "/Volumes/X/ira-new-analysis/*.parquet"
+DATA_PATH = os.environ.get("IRA_TRACES", "/Volumes/X/ira-new-analysis/*.parquet")
 
 
 def main():
