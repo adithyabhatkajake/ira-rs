@@ -12,7 +12,7 @@ paper.
 
 ## Paper
 
-> Adithya Bhat. *Ira: Efficient Transaction Replay for Ethereum.*
+> Adithya Bhat, Harshal Shah, Mohsen Minaei. *Ira: Efficient Transaction Replay for Ethereum.*
 > USENIX Security Symposium, 2026. arXiv:[2601.21286](https://arxiv.org/abs/2601.21286).
 
 ## Repository layout
@@ -196,7 +196,7 @@ MIT. See `LICENSE` and `AUTHORS`.
 ```bibtex
 @inproceedings{bhat2026ira,
   title     = {Ira: Efficient Transaction Replay for Ethereum},
-  author    = {Bhat, Adithya},
+  author    = {Bhat, Adithya and Shah, Harshal and Minaei, Mohsen},
   booktitle = {35th USENIX Security Symposium (USENIX Security 26)},
   year      = {2026},
   publisher = {USENIX Association},
