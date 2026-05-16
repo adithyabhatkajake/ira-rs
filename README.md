@@ -13,7 +13,7 @@ paper.
 ## Paper
 
 > Adithya Bhat. *Ira: Efficient Transaction Replay for Ethereum.*
-> USENIX Security Symposium, 2026 (paper #91, Cycle 2).
+> USENIX Security Symposium, 2026. arXiv:[2601.21286](https://arxiv.org/abs/2601.21286).
 
 ## Repository layout
 
@@ -200,7 +200,9 @@ MIT. See `LICENSE` and `AUTHORS`.
   booktitle = {35th USENIX Security Symposium (USENIX Security 26)},
   year      = {2026},
   publisher = {USENIX Association},
-  note      = {Paper \#91, Cycle 2}
+  eprint    = {2601.21286},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2601.21286}
 }
 ```
 
