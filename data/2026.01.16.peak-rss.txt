@@ -1,0 +1,7 @@
+Peak RSS Results - Fri Jan 16 15:03:34 PST 2026
+Blocks: 24019447 - 24120246 (100800 blocks)
+=============================================
+
+reth-backup: 26672 MB (27967979520 bytes)
+reth-backup wall time: 4422 seconds
+

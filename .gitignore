@@ -1,2 +1,4 @@
 /target
-/data
+.tmp/
+.venv/
+ira-p/

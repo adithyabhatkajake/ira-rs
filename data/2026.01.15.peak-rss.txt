@@ -1,0 +1,10 @@
+Peak RSS Results - Thu Jan 15 09:26:44 PST 2026
+Blocks: 24019447 - 24120246 (100800 blocks)
+=============================================
+
+reth-baseline: 26947 MB (28256354304 bytes)
+reth-baseline wall time: 23250 seconds
+
+reth-primary: 26756 MB (28056141824 bytes)
+reth-primary wall time: 29889 seconds
+
