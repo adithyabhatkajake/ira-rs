@@ -1,0 +1,6 @@
+# Python dependencies for Ira artifact reproduction (USENIX Security '26).
+duckdb>=1.0
+matplotlib>=3.8
+numpy>=2.0
+pandas>=2.0
+zstandard>=0.22
