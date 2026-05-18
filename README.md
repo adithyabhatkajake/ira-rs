@@ -1,5 +1,9 @@
 # Ira: Efficient Transaction Replay for Ethereum
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20262361.svg)](https://doi.org/10.5281/zenodo.20262361)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 Ira accelerates Ethereum archive-node transaction replay by recording compact
 state hints during a primary execution and using those hints to drive
 backup replayers that bypass the trie. Against an unmodified reth baseline
